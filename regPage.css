@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,200&family=Ubuntu:wght@300;400;500;700&display=swap");
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* ----------------------------reg.php design------------------- */
+/* this is the background of scaffold */
+body{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #000000, #a020f0);   
+}
+/* this is the background of the container */
+.container{
+    max-width: 700px;
+    width: 100%;
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+}
+.container .title{
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+}
+.container .title::before{
+    left: 0;
+    bottom: 0;
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 30px;
+    background: linear-gradient(135deg, #000000, #a020f0);
+}
+.container form .user-details{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+form .user-details .input-box{
+    margin: 20px 0 12px 0;
+    width: calc(100% / 2 - 20px);
+}
+.user-details .input-box details{
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+.user-details .input-box input{
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+.user-details .input-box input:focus,
+.user-details .input-box input:valid{
+    border-color: #a020f0;
+}
+form .campus-details .roles{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+form .campus-details .category{
+    display: flex;
+    width: 80%;
+    margin: 14px 0;
+    justify-content: space-between;
+}
+
+.roles .category label{
+    display: flex;
+    align-items: center;
+}
+.roles .category .dot{
+    height: 18px;
+    width: 18px;
+    background: #a020f0;
+    margin-right: 10px;
+    border-radius: 50%;
+    border: 5px solid transparent;
+    transition: all 0.3s ease;
+}
+
+#dot-1:checked ~ .category label .dot-1,
+#dot-2:checked ~ .category label .dot-2,
+#dot-3:checked ~ .category label .dot-3{
+    border-color: #000000;
+    background: #a020f0;
+}
+
+/* form input[type="radio"]{
+    display: none;
+} */
+
+.button{
+    height: 45px;
+    margin: 45px 0;
+    align-items: center;
+}
+form .button input{
+   
+    height: 100%;
+    width: 100%;
+    outline: none;
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    background: linear-gradient(135deg, #000000, #a020f0);
+}
+
+form .button input:hover{
+    background: linear-gradient(135deg, #000000, #a020f0);
+}
+
+@media (max-width: 584px){
+    .container{
+        max-width: 100%;
+    }
+    form .user-details .input-box{
+        margin-bottom: 15px;
+        width: 100%;
+    }
+    form .user-details .category{
+        width: 100%;
+    }
+    .container form .user-details{
+        max-height: 300px;
+        overflow-y: scroll;
+    }
+
+    
+}
+/* .error{
+    color: red;
+    background-color: #a020f0;
+    padding: 10px;
+    display: none;
+    transform: translateY(-20px);
+    margin-bottom: 20px;
+    font-size: 14px;
+} */
+
+.user-details.input-box.success input{
+    border-color: #09c372;
+}
+.user-details.input-box.error input{
+    border-color: #ff3860;
+}
+
+.user-details.input-box .error{
+    color: #ff3860;
+    font-size: 9px;
+    height: 13px;
+}
